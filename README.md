@@ -82,9 +82,15 @@ Clone this repository to your desired folder:
 - Install <a href="https://www.postgresql.org/">PostgreSQL</a>.
 - Install <a href="https://rubyonrails.org/">Ruby On Rails</a>.
 
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Run Test
+### Run
+   bundle install to install gems,
+   rails db:setup to create database 
+   run migrations, 
+  And rails s to run the application.
 
 To run the testing, execute the following command:
 
