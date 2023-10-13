@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Blog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,9 +12,16 @@
   </head>
 
   <body>
-    <div class='header-naviagation'>
-      <%= link_to 'Sign Up', new_user_registration_path  %>
+    <div class="header-navigation bg-gray-800 text-white p-4">
+      <%= link_to 'Home', root_path, class: 'mr-4' %>
     </div>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
