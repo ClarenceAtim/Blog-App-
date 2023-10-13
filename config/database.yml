@@ -9,16 +9,16 @@ development:
   <<: *default
   database: blog
   username: postgres
-  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
+  password: kiko
 
 test:
   <<: *default
   database: blog
   username: postgres
-  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
+  password: kiko
 
 production:
   <<: *default
   database: blog
   username: postgres
-  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
+  password: kiko
