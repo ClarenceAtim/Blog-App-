@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Post index ' do
+RSpec.describe 'Post index' do
   before :each do
     @user = User.create(name: 'John Doe', photo: 'https://example.com/john-doe.jpg', bio: 'Web Developer',
                         post_counter: 0)
@@ -36,6 +36,10 @@ RSpec.describe 'Post index ' do
 
   it 'can see first comment on post ' do
     expect(page).to have_content('Great post!')
+  end
+
+  it 'can see how many comment has' do
+    expect(page).to have_content('Comments 0')
   end
 
   it 'can see how many likes a post has' do
