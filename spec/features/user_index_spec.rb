@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe 'User index', type: :feature do
   before :each do
     @user1 = User.create(name: 'John Doe', photo: 'https://example.com/john-doe.jpg', bio: 'Software Engineer',
@@ -17,6 +15,16 @@ RSpec.describe 'User index', type: :feature do
     expect(page).to have_content('Number of posts')
     expect(page).to have_text("John Doe\nNumber of posts: 5")
     expect(page).to have_text("Jane Smith\nNumber of posts: 3")
+  end
+
+  it 'displays usernames for all users' do
+    expect(page).to have_text('John Doe')
+    expect(page).to have_text('Jane Smith')
+  end
+
+  it 'displays profile pictures for all users' do
+    expect(page).to have_css("img[src*='https://example.com/john-doe.jpg']")
+    expect(page).to have_css("img[src*='https://example.com/jane-smith.jpg']")
   end
 
   it 'When I click on a user, it should redirect to user/show page' do
